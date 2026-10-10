@@ -21,3 +21,7 @@ logger.on('message', logToFile); //this is the one listening, and the message is
 
 // so someone is there whose ready to listen the emmiters, but there is no one whose emitting those till now.
 
+setInterval( ()=>{ 
+    const memoryUsage = (1 - os.freemem() / os.totalmem()) * 100;
+    logger.log(`Current Memory used: ${memoryUsage.toFixed(2)}`); 
+}, 3000); 

@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const os = require('node:os');
 
-const EventEmitters = require('node:events'); //this is a class
+const EventEmitters = require('node:events'); //even is a class
 
 class Logger extends EventEmitters{
     log(message){
@@ -12,7 +12,7 @@ class Logger extends EventEmitters{
 const logger = new Logger(); //class name and instance name should be different
 const logFile = './eventlog.txt';
 
-const logToFile = (event) =>{ //explain: this is the one whose writing all messga into the file so wehenver the message emmits it grabs it and write into the logFile.
+const logToFile = (event) =>{
     const logMessage = `${new Date().toISOString()} - ${event.message} \n`;
     fs.appendFileSync(logFile, logMessage);
 }
